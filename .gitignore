@@ -1,0 +1,7 @@
+venv
+.env
+*md
+.vscode
+dev.db
+prod.db
+__pycache__
