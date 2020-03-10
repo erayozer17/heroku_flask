@@ -3,6 +3,7 @@ version: '3.7'
 services:
 
   web:
+    container_name: web
     image: web
     build:
       context: ./
@@ -15,10 +16,10 @@ services:
       - APP_NAME=heroku_flask
       - FLASK_DEBUG=1
       - PYTHONUNBUFFERED=0
-      - APP_SETTINGS=project.server.config.ProductionConfig
+      - APP_SETTINGS=project.server.config.DevelopmentConfig
       - DATABASE_URL=postgres://postgres:postgres@web-db:5432/users_dev
       - DATABASE_TEST_URL=postgres://postgres:postgres@web-db:5432/users_test
-      - SECRET_KEY=change_me_in_prod
+      - SECRET_KEY
     depends_on:
       - web-db
 
@@ -27,8 +28,8 @@ services:
     build:
       context: ./project/server/db
       dockerfile: Dockerfile
-    expose:
-      - 5432
+    ports:
+      - "5432:5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres

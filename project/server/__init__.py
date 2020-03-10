@@ -7,6 +7,7 @@ from flask import Flask, render_template
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
 from flask_debugtoolbar import DebugToolbarExtension
+# from flask_dotenv import DotEnv
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -19,6 +20,7 @@ toolbar = DebugToolbarExtension()
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 migrate = Migrate()
+# env = DotEnv()
 
 
 def create_app(script_info=None):
@@ -29,6 +31,7 @@ def create_app(script_info=None):
         template_folder="../client/templates",
         static_folder="../client/static",
     )
+    # env.init_app(app)
 
     # set config
     app_settings = os.getenv(

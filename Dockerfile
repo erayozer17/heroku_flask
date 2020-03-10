@@ -1,8 +1,8 @@
-FROM python:3.8.1-slim
+FROM python:3.8.2-slim
 
 # install netcat
 RUN apt-get update \
-  && apt-get -y install netcat \
+  && apt-get -y install netcat gcc \
   && apt-get clean
 
 # set working directory

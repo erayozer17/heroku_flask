@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "heroku_flask"
+version = "0.1.0"
+description = ""
+authors = ["erayozer17 <eray.ozer.91@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "3.8.2"
+coverage = ">=4.5.4"
+flake8 = "3.7.9"
+Flask = "1.1.1"
+Flask-Bcrypt = "0.7.1"
+Flask-Bootstrap = "3.3.7.1"
+Flask-DebugToolbar = "0.11.0"
+Flask-Login = "0.5.0"
+Flask-Migrate = "2.5.2"
+Flask-SQLAlchemy = "2.4.1"
+Flask-Testing = "0.7.1"
+Flask-WTF = "0.14.3"
+psycopg2-binary = "2.8.4"
+Werkzeug = "0.16.1"
+uwsgi = "^2.0.18"
+Flask-DotEnv = "^0.1.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
